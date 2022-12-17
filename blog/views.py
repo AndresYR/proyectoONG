@@ -12,3 +12,9 @@ def posts(request):
     return render(request, "blog/posts.html", {
         'latest_post_list': latest_post_list
     })
+
+def detail(request, post_id):
+    post = Posteo.objects.get(pk= post_id)
+    return render(request, 'blog/detail.html', {
+        'post': post
+    })
