@@ -18,3 +18,10 @@ def detail(request, post_id):
     return render(request, 'blog/detail.html', {
         'post': post
     })
+
+def about(request):
+    return render(request, 'blog/about.html')
+
+
+def contact():
+    return render(request, 'blog/contact.html')
