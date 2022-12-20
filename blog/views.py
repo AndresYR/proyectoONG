@@ -7,9 +7,9 @@ def index(request):
     return render(request, 'blog/index.html')
 
 
-def posts(request):
+def post(request):
     latest_post_list = Posteo.objects.all
-    return render(request, "blog/posts.html", {
+    return render(request, "blog/post.html", {
         'latest_post_list': latest_post_list
     })
 
@@ -18,3 +18,9 @@ def detail(request, slug_text):
     return render(request, 'blog/detail.html', {
         'post': post
     })
+
+def about(request):
+    return render(request, 'blog/about.html')
+
+def contact(request):
+    return render(request, "blog/contact.html")
