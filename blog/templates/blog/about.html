@@ -1,6 +1,9 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'blog/css/css/clean-blog.min.css' %}">
-<link rel="stylesheet" href="{% static 'blog/css/clean-blog.min.css' %}">
+<link rel="stylesheet" href="{% static 'blog/css/clean-blog.css' %}">
+<link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css' %}">
+<!-- jQuery -->
+<script src="{% static 'js/jquery.min.js' %}"></script>
 
 
 
@@ -48,7 +51,7 @@
                     <span class="sr-only">Toggle navigation</span>
                     Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+                <a class="navbar-brand" href="{% url 'index' %}">Amo los Perros</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -64,7 +67,7 @@
                         <a href="{% url 'post' %}">Sample Post</a>
                     </li>
                     <li>
-                        <a href="{% url 'contact' %}">Contact</a>
+                        <a href="{% url 'contact' %}">Contacto</a>
                     </li>
                 </ul>
                 </ul>
@@ -76,27 +79,62 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/about-bg.jpg')">
-        <div class="container">
+    <header class="intro-header"></header>
+       <!-- <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="page-heading">
-                        <h1>About Me</h1>
+                    <div class="site-heading">
+                        <h1>Clean Blog</h1>
                         <hr class="small">
-                        <span class="subheading">This is what I do.</span>
+                        <span class="subheading">A Clean Blog Theme by Start Bootstrap</span>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </div> >
+    </header> -->
 
     <!-- Main Content -->
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam ducimus consectetur?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium recusandae illo eaque architecto error, repellendus iusto reprehenderit, doloribus, minus sunt. Numquam at quae voluptatum in officia voluptas voluptatibus, minus!</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum molestiae debitis nobis, quod sapiente qui voluptatum, placeat magni repudiandae accusantium fugit quas labore non rerum possimus, corrupti enim modi! Et.</p>
+                <p>
+                    <h2>Mision y Vision</h2>
+                    <p>Disminuir la cantidad de animales no castrados mediante castraciones masivas y gratuitas. Alcanzar
+                        una mejora significativa en la calidad de vida de todos los animales de nuestra ciudad, abarcando
+                        también localidades aledañas.
+                        Generar una red de adopción por todo nuestro territorio, que permita reducir la gran población de
+                        animales callejeros.    
+                    </p>
+                </p>
+               <p>
+                    <h2>Objetivos:</h2>
+                    <ul>
+                        <li>Que los animales alcancen una mejor calidad de vida.</li>
+                        <li>Garantizar el acceso a las castraciones.</li>
+                        <li>Concientizar acerca de la tenencia responsable</li>
+                        <li>Difundir información sobre los efectos negativos de la pirotecnia.</li>
+                        <li>Insistir a los organismos correspondientes, en el debate sobre la utilización
+                            de carros de caballos como medio de carga.</li>
+                    </ul>
+                </p>
+                <p>
+                    <H2>Integrantes de la Organización</H2>
+                    <ul>
+                        <li>María Goi</li>
+                        <li>Marilu Giuggia</li>
+                        <li>Ana Bogado</li>
+                        <li>Lorena Gomez</li>
+                        <li>Carla Acosta</li>
+                        <li>Ariel Darocas</li>
+                        <li>Juana Goya</li>
+                        <li>Marcela Iznardo</li>
+                        <li>Gladis Fernandez</li>
+                        <li>Rosana Santos</li>
+                        <li>Laura Avalle</li>
+                        <li>Fabiana Rolhaiser</li>
+                        <li>Susana Sosa</li>
+                    </ul>
+                </p>               
             </div>
         </div>
     </div>
@@ -125,14 +163,7 @@
                                 </span>
                             </a>
                         </li>
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
+                        
                     </ul>
                     <p class="copyright text-muted">Copyright &copy; Your Website 2016</p>
                 </div>
@@ -140,19 +171,15 @@
         </div>
     </footer>
 
-    <!-- jQuery -->
-    <script src="js/jquery.min.js"></script>
-
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
 
     <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
+    <script src="{% static 'js/jqBootstrapValidation.js' %}"></script>
+    <script src="{% static 'js/contact_me.js' %}"></script>
 
     <!-- Theme JavaScript -->
-    <script src="js/clean-blog.min.js"></script>
-
+    <script src="{% static 'js/clean-blog.min.js' %}"></script>
 </body>
 
 </html>
