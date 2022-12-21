@@ -6,9 +6,9 @@ from .models import Posteo
 def index(request):
     return render(request, 'blog/index.html')
 
-def post(request, slug_text):
+def detail(request, slug_text):
     post = Posteo.objects.get(slug= slug_text)
-    return render(request, 'blog/post.html', {
+    return render(request, 'blog/detail.html', {
         'post': post
     })
 
