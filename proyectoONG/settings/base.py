@@ -122,12 +122,66 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-MEDIA_URL = '/media/'
+MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+TINYMCE_DEFAULT_CONFIG = {
+    'plugins': 'print preview importcss tinydrive searchreplace autolink autosave save directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists  wordcount imagetools textpattern noneditable help charmap quickbars emoticons blockquote',
+    'menubar': 'file edit view insert format tools table tc help',
+    'toolbar': 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist checklist | forecolor backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media pageembed template link anchor codesample | a11ycheck ltr rtl | showcomments addcomment',
+    # 'autosave_ask_before_unload': True,
+    # 'autosave_interval': '30s',
+    # 'autosave_prefix': '{path}{query}-{id}-',
+    # 'autosave_restore_when_empty': False,
+    # 'autosave_retention': '2m',
+    # 'image_advtab': True,
+    # 'automatic_uploads': False,
+    # 'importcss_append': True,
+    # 'templates': [
+    #     {
+    #         'title': 'New Table',
+    #         'description': 'creates a new table',
+    #         'content': '<div class="mceTmpl"><table width="98%%"  border="0" cellspacing="0" cellpadding="0"><tr><th scope="col"> </th><th scope="col"> </th></tr><tr><td> </td><td> </td></tr></table></div>'
+    #     },
+    #     {'title': 'Starting my story', 'description': 'A cure for writers block', 'content': 'Once upon a time...'},
+    #     {
+    #         'title': 'New list with dates',
+    #         'description': 'New List with dates',
+    #         'content': '<div class="mceTmpl"><span class="cdate">cdate</span><br /><span class="mdate">mdate</span><h2>My List</h2><ul><li></li><li></li></ul></div>'
+    #     }
+    # ],
+    # 'template_cdate_format': '[Date Created (CDATE): %m/%d/%Y : %H:%M:%S]',
+    # 'template_mdate_format': '[Date Modified (MDATE): %m/%d/%Y : %H:%M:%S]',
+    'height': 600,
+    'image_caption': True,
+    'quickbars_selection_toolbar': 'bold italic | fontselect fontsizeselect formatselect',
+    'noneditable_noneditable_class': 'mceNonEditable',
+    'toolbar_mode': 'sliding',
+    'spellchecker_ignore_list': ['Ephox', 'Moxiecode'],
+    'tinycomments_mode': 'embedded',
+    'content_style': '.mymention{ color: gray; }',
+    'contextmenu': 'link image in',
+    'a11y_advanced_options': True,
+    'mentions_selector': '.mymention',
+    'mentions_item_type': 'profile',
+    "language": "es_ES",  # To force a specific language instead of the Django current language.
+}
+# TINYMCE_DEFAULT_CONFIG = {
+#     "height": "320px",
+#     "width": "960px",
+#     "menubar": "file edit view insert format tools table help",
+#     "plugins": "advlist autolink lists link image charmap print preview anchor searchreplace visualblocks code "
+#     "fullscreen insertdatetime media table paste code help wordcount spellchecker",
+#     "toolbar": 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist checklist | forecolor backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media pageembed template link anchor codesample | a11ycheck ltr rtl | showcomments addcomment',
+#     "custom_undo_redo_levels": 10,
+#     "language": "es_ES",  # To force a specific language instead of the Django current language.
+# }

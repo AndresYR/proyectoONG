@@ -4,14 +4,17 @@ from django.utils.text import slugify
 
 from .utils import set_slug
 
+from tinymce import models as tinymce_models
+
 
 class Posteo(models.Model):
     titulo = models.CharField(max_length= 200, null= True)
     slug = models.SlugField(max_length= 200, null= False, blank= True, editable= False)
     # autor = models.ForeignKey(Usuario, on_delete= models.CASCADE, related_name= 'blog_posts')
     copete = models.CharField(max_length= 200, null= True)
-    contenido = models.TextField(null= True)
-    # imagen =
+    # contenido = models.TextField(null= True)
+    contenido = tinymce_models.HTMLField(null= True)
+    imagen_encabezado = models.ImageField(upload_to= 'images/', null= True, blank= True)
     creacion = models.DateTimeField(auto_now_add= True)
     modificacion = models.DateTimeField(auto_now= True)
 
