@@ -1,6 +1,9 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'blog/css/css/clean-blog.min.css' %}">
-<link rel="stylesheet" href="{% static 'blog/css/clean-blog.min.css' %}">
+<link rel="stylesheet" href="{% static 'blog/css/clean-blog.css' %}">
+<link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css' %}">
+<!-- jQuery -->
+<script src="{% static 'js/jquery.min.js' %}"></script>
 
 
 <!DOCTYPE html>
@@ -14,7 +17,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Clean Blog - Contact</title>
+    <title>Amo los Perros- Contacto</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -47,7 +50,7 @@
                     <span class="sr-only">Toggle navigation</span>
                     Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+                <a class="navbar-brand" href="{% url 'index' %}">Start Bootstrap</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -63,7 +66,7 @@
                         <a href="{% url 'post' %}">Sample Post</a>
                     </li>
                     <li>
-                        <a href="{% url 'contact' %}">Contact</a>
+                        <a href="{% url 'contact' %}">Contacto</a>
                     </li>
                 </ul>
             </div>
@@ -72,21 +75,19 @@
         <!-- /.container -->
     </nav>
 
-    <!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/contact-bg.jpg')">
+    <header class="intro-header" >
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="page-heading">
-                        <h1>Contact Me</h1>
-                        <hr class="small">
-                        <span class="subheading">Have questions? I have answers (maybe).</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+             <div class="row">
+                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                     <div class="site-heading">
+                         <h1>Clean Blog</h1>
+                         <hr class="small">
+                         <span class="subheading">A Clean Blog Theme by Start Bootstrap</span>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </header> 
 
     <!-- Main Content -->
     <div class="container">
@@ -161,33 +162,22 @@
                                 </span>
                             </a>
                         </li>
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
+                        
                     </ul>
                     <p class="copyright text-muted">Copyright &copy; Your Website 2016</p>
                 </div>
             </div>
         </div>
     </footer>
-
-    <!-- jQuery -->
-    <script src="js/jquery.min.js"></script>
-
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
 
     <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
+    <script src="{% static 'js/jqBootstrapValidation.js' %}"></script>
+    <script src="{% static 'js/contact_me.js' %}"></script>
 
     <!-- Theme JavaScript -->
-    <script src="js/clean-blog.min.js"></script>
+    <script src="{% static 'js/clean-blog.min.js' %}"></script>
 
 </body>
 
