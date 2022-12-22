@@ -12,7 +12,6 @@ class Posteo(models.Model):
     slug = models.SlugField(max_length= 200, null= False, blank= True, editable= False)
     # autor = models.ForeignKey(Usuario, on_delete= models.CASCADE, related_name= 'blog_posts')
     copete = models.CharField(max_length= 200, null= True)
-    # contenido = models.TextField(null= True)
     contenido = tinymce_models.HTMLField(null= True)
     imagen_encabezado = models.ImageField(upload_to= 'images/', null= True, blank= True)
     creacion = models.DateTimeField(auto_now_add= True)

@@ -64,7 +64,7 @@
                         <a href="{% url 'about' %}">Nosotros</a>
                     </li>
                     <li>
-                        <a href="{% url 'post' %}">Sample Post</a>
+                        {% comment %} <a href="{% url 'post' %}">Sample Post</a> {% endcomment %}
                     </li>
                     <li>
                         <a href="{% url 'contact' %}">Contacto</a>
@@ -79,14 +79,12 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header">
+    <header class="intro-header" id="img-header">
        <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
-                        <h1>Clean Blog</h1>
-                        <hr class="small">
-                        <span class="subheading">A Clean Blog Theme by Start Bootstrap</span>
+                        
                     </div>
                 </div>
             </div>
@@ -148,15 +146,15 @@
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <ul class="list-inline text-center">
                         <li>
-                            <a href="#">
+                            <a href="https://www.instagram.com/amo_los_perros_sp/" target="_blank">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
                                 </span>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="https://www.facebook.com/groups/380502425339061" target="_blank">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>

@@ -14,7 +14,7 @@ import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -45,7 +45,6 @@ LOCAL_APPS = [
 ]
 
 THIRD_APPS = [
-    'ckeditor',
     'tinymce',
 ]
 
@@ -119,7 +118,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 MEDIA_URL = 'media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_ROOT = os.path.join(str(BASE_DIR)+'/blog/static/blog', 'media/')
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
@@ -159,7 +158,7 @@ TINYMCE_DEFAULT_CONFIG = {
     # 'template_mdate_format': '[Date Modified (MDATE): %m/%d/%Y : %H:%M:%S]',
     'height': 600,
     'image_caption': True,
-    'quickbars_selection_toolbar': 'bold italic | fontselect fontsizeselect formatselect',
+    # 'quickbars_selection_toolbar': 'bold italic | fontselect fontsizeselect formatselect',
     'noneditable_noneditable_class': 'mceNonEditable',
     'toolbar_mode': 'sliding',
     'spellchecker_ignore_list': ['Ephox', 'Moxiecode'],

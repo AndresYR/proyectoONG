@@ -37,7 +37,8 @@
 </head>
 
 <body>
-
+    <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v15.0" nonce="lNbgkqxC"></script>
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container-fluid">
@@ -47,7 +48,7 @@
                     <span class="sr-only">Toggle navigation</span>
                     Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+                <a class="navbar-brand" href="{% url 'index' %}">Amo los Perros</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -74,19 +75,24 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" class="post_header">
-        <div class="container">
+    {% comment %} <header class="intro-header"> {% endcomment %}
+    <header class="intro-header">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="post-heading">
+                    <div class="post-heading"  
+                    {% if post.imagen_encabezado %}
+                        style="background:no-repeat right center url({{post.imagen_encabezado.url}})"
+                    {% endif %}>
                         <h1>{{ post.titulo }}</h1>
                         <h2 class="subheading">{{ post.copete }}</h2>
-                        <span class="meta">Posteado el {{post.creacion}}</span>
+                        <span class="meta">Posteado en {{post.creacion}}</span>
                     </div>
                 </div>
             </div>
         </div>
     </header>
+
+    <hr>
 
     <!-- Post Content -->
     <article>
@@ -94,13 +100,10 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <p>{{ post.contenido|safe }}</p>
-                    {% comment %} <img src="{{ post.imagen.url }}" alt="404"> {% endcomment %}
-                    {% if post.imagen_encabezado %}
-                        <img src="{{ post.imagen_encabezado.url }}" alt="404">
-                    {% endif %}
                 </div>
             </div>
         </div>
+        <div class="fb-comments" data-href="http://127.0.0.1:8000/post/este-es-un-nuevo-posteo-28fd4a/" data-width="" data-numposts="5"></div>
     </article>
 
     <hr>
@@ -112,26 +115,18 @@
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <ul class="list-inline text-center">
                         <li>
-                            <a href="#">
+                            <a href="https://www.instagram.com/amo_los_perros_sp/" target="_blank">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
                                 </span>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="https://www.facebook.com/groups/380502425339061" target="_blank">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
                                 </span>
                             </a>
                         </li>
