@@ -28,6 +28,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Login Conf
+LOGIN_URL = 'blog/login'
+
+LOGIN_REDIRECT_URL = '../'
 
 # Application definition
 
@@ -65,7 +69,7 @@ ROOT_URLCONF = 'proyectoONG.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -123,6 +127,9 @@ MEDIA_ROOT = os.path.join(str(BASE_DIR)+'/blog/static/blog', 'media/')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+# STATICFILES_DIRS = (
+#     os.path.join(os.path.dirname(BASE_DIR), 'static'),
+# )
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -170,13 +177,3 @@ TINYMCE_DEFAULT_CONFIG = {
     'mentions_item_type': 'profile',
     "language": "es_ES",  # To force a specific language instead of the Django current language.
 }
-# TINYMCE_DEFAULT_CONFIG = {
-#     "height": "320px",
-#     "width": "960px",
-#     "menubar": "file edit view insert format tools table help",
-#     "plugins": "advlist autolink lists link image charmap print preview anchor searchreplace visualblocks code "
-#     "fullscreen insertdatetime media table paste code help wordcount spellchecker",
-#     "toolbar": 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist checklist | forecolor backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media pageembed template link anchor codesample | a11ycheck ltr rtl | showcomments addcomment',
-#     "custom_undo_redo_levels": 10,
-#     "language": "es_ES",  # To force a specific language instead of the Django current language.
-# }
